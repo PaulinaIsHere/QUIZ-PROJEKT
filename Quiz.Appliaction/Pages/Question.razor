@@ -6,26 +6,27 @@
 @inject IGameService GameService
 
 <style>
-  
+
     body {
         background-color: rgba(213, 255, 249, 0.15);
     }
+
     .answer {
-    min-width: 300px;
-    margin: 25px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:skyblue;
-    color: #000000;
-    cursor: pointer;    
+        min-width: 300px;
+        margin: 25px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: skyblue;
+        color: #000000;
+        cursor: pointer;
     }
 
-    .answer:hover {
-    background-color: blue;
-    color: #ffffff;
-    }   
+        .answer:hover {
+            background-color: blue;
+            color: #ffffff;
+        }
 </style>
 
 @if (isLoading)
@@ -45,8 +46,6 @@
         }
     </div>
 }
-
-
 
 @code {
 
