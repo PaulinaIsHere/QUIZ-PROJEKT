@@ -1,6 +1,33 @@
 ﻿@page "/success"
+@inject IJSRuntime JsRuntime
+
 <h1 style="color:green">Brawo, ukończyłeś/aś cały Quiz!</h1>
 <br />
-<button class="btn btn-primary" onclick="window.location.href='/'" style="padding:15px 30px; font-size:20px;">
+<button class="btn btn-primary custom-button" onclick="window.location.href='/'">
     Nowa gra
 </button>
+
+<style>
+    .custom-button {
+        padding: 20px 30px;
+        font-size: 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        .custom-button:hover {
+            background-color: darkviolet; /* Kolor tła po najechaniu */
+            color: floralwhite; /* Kolor tekstu po najechaniu */
+        }
+</style>
+@code
+{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Call the JavaScript function to launch confetti
+            await JsRuntime.InvokeVoidAsync("launchConfetti");
+        }
+    }
+}
+

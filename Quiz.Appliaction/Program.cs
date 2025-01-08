@@ -8,5 +8,6 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://quizgrupa4api.azurewebsites.net/") });
+builder.Services.AddBlazorBootstrap();
 
 await builder.Build().RunAsync();

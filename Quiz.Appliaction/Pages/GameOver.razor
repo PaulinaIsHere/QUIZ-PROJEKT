@@ -6,6 +6,12 @@
     body {
         background-color: rgba(226, 151, 127, 0.15);
     }
+
+    .btn:hover {
+        background-color: red !important; /* Kolor tła podczas najechania */
+        color: white !important; /* Kolor tekstu podczas najechania */
+        border-color: #ff6600 !important; /* Kolor obramowania podczas najechania */
+    }
 </style>
 
 <h1 style="color:red">Niestety to nie jest poprawna odpowiedź.</h1>
@@ -17,8 +23,6 @@
 <button class="btn btn-primary" @onclick="NavigateToWelcome">Spróbuj ponownie</button>
 
 @code {
-
-
     private void NavigateToWelcome()
     {
         NavigationManager.NavigateTo("/");

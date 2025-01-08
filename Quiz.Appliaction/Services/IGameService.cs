@@ -6,5 +6,8 @@ namespace Quiz.Appliaction.Services
     {
         Task<QuestionDto?> GetQuestion(int category);
         Task<CheckAnswer?> CheckAnswer(Guid answerId, int category);
+        int GetProgress();
+        void ResetProgress();
+        void IncreaseProgress();
     }
 }

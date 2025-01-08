@@ -7,6 +7,7 @@ namespace Quiz.Appliaction.Services
     {
         private readonly HttpClient _client;
         private JsonSerializerOptions _serializerOptions;
+        private int progress = 0;
 
         public GameService(HttpClient client)
         {
@@ -28,6 +29,11 @@ namespace Quiz.Appliaction.Services
                 return null;
         }
 
+        public int GetProgress()
+        {
+            return progress;
+        }
+
         public async Task<QuestionDto?> GetQuestion(int category)
         {
             var url = $"getQuestion?category={category}";
@@ -39,6 +45,16 @@ namespace Quiz.Appliaction.Services
             }
             else
                 return null;
+        }
+
+        public void IncreaseProgress()
+        {
+            progress = progress + (100 / 7);
+        }
+
+        public void ResetProgress()
+        {
+            progress = 0;
         }
     }
 }
