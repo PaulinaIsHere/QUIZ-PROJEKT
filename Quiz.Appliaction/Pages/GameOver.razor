@@ -9,18 +9,18 @@
 </style>
 
 <h1 style="color:red">Niestety to nie jest poprawna odpowiedź.</h1>
-<br/>
-<p style="color:orangered; font-weight: bold; font-size: 20px; ">KONIEC GRY</p>
+<br />
+<p style="color:orangered; font-weight: bold; font-size: 20px;">KONIEC GRY</p>
 <br />
 <img src="images/GameOver_gif.gif" alt="Game Over" style="width:700px; height:auto;" />
 <br />
-<button class="btn btn-danger" @onclick="StartQuiz">Spróbuj jeszcze raz</button>
+<button class="btn btn-primary" @onclick="NavigateToWelcome">Spróbuj ponownie</button>
 
 @code {
 
-    private async Task StartQuiz()
+
+    private void NavigateToWelcome()
     {
-        await Js.InvokeVoidAsync("localStorage.setItem", "_cookiecategory6", "100");
         NavigationManager.NavigateTo("/");
     }
 }

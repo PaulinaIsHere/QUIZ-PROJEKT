@@ -15,4 +15,10 @@
     <ProjectReference Include="..\Quiz.Data\Quiz.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\Rules&amp;start.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
